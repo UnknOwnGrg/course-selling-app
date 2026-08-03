@@ -45,3 +45,6 @@ next-env.d.ts
 
 Notes.md
 /lib/generated/prisma
+.agents/
+.claude/
+.windsurf/
