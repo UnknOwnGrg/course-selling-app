@@ -126,9 +126,9 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
-  }
 }
 
+.ql-container {
+  font-size: 16px !important;
+}
 @source "../node_modules/@uploadthing/react/dist"; /** <-- depends on your project structure */
