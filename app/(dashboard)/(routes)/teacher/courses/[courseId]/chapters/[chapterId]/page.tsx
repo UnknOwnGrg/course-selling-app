@@ -52,7 +52,7 @@ const ChapterIdPage = async ({
           label="This chapter is unpublished. It will not be visible in the course"
         />
       )}
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         <div className="flex items-center justify-between">
           <div className="w-full">
             <Link
@@ -62,28 +62,32 @@ const ChapterIdPage = async ({
               <ArrowBigLeft className="mr-2 h-4 w-4" />
               Back to course setup
             </Link>
-            <div className="flex w-full items-center justify-between">
-              <div className="flex flex-col gap-y-2">
-                <h1 className="text-2xl font-medium">Chapter Creation</h1>
-                <span className="text-sm text-slate-700">
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0 flex-1">
+                <h1 className="text-xl font-medium sm:text-2xl">
+                  Chapter Creation
+                </h1>
+                <span className="block text-xs text-slate-700 sm:text-sm">
                   Complete all fields {completionText}
                 </span>
               </div>
-              <ChapterActions
-                isPublished={chapter.isPublished}
-                disabled={!isComplete}
-                courseId={courseId}
-                chapterId={chapterId}
-              />
+              <div className="flex shrink-0 items-center self-center">
+                <ChapterActions
+                  isPublished={chapter.isPublished}
+                  disabled={!isComplete}
+                  courseId={courseId}
+                  chapterId={chapterId}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="mt-16 grid grid-cols-2 gap-6 md:grid-cols-2">
-          <div className="space-y-4">
+        <div className="mt-8 grid gap-6 md:mt-16 lg:grid-cols-2">
+          <div className="space-y-6">
             <div>
               <div className="flex items-center gap-x-2">
                 <IconBadge icon={LayoutDashboard} />
-                <h2 className="text-xl">Customize your chapter</h2>
+                <h2 className="text-lg sm:text-xl">Customize your chapter</h2>
               </div>
               <ChapterTitleForm
                 intialData={{ title: chapter.title }}
@@ -99,7 +103,7 @@ const ChapterIdPage = async ({
             <div>
               <div className="flex items-center gap-x-2">
                 <IconBadge icon={Eye} />
-                <h2 className="text-xl">Access Settings</h2>
+                <h2 className="text-lg sm:text-xl">Access Settings</h2>
               </div>
               <ChapterAccessForm
                 initialData={chapter}
@@ -111,7 +115,7 @@ const ChapterIdPage = async ({
           <div>
             <div className="flex items-center gap-x-2">
               <IconBadge icon={Video} />
-              <h2 className="text-xl">Add a Video</h2>
+              <h2 className="text-lg sm:text-xl">Add a Video</h2>
             </div>
             <ChapterVideoForm
               initialData={chapter}
