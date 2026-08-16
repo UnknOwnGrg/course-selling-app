@@ -10,8 +10,11 @@ async function main() {
         { name: "Engineering" },
         { name: "Photography" },
         { name: "Fitness" },
+        { name: "Accounting" },
+        { name: "Filming" },
       ],
     });
+
     console.log("Success");
   } catch (error) {
     console.log("Error seedint the database categories", error);
